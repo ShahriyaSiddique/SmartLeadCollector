@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeActivity">
+    
+    <ImageView
+        android:id="@+id/welcome_logo"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:src="@drawable/welcome_logo"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/welcome_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_to_smart_lead_collector_application"
+        android:layout_below="@+id/welcome_logo"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:fontFamily="cursive"
+        tools:targetApi="jelly_bean"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/welcome_login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_design"
+        android:text="@string/login"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_below="@+id/welcome_msg"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginEnd="60dp"
+        />
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/not_a_member_signup"
+        android:layout_below="@id/welcome_login_btn"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"/>
+
+
+</RelativeLayout>

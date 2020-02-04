@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Smart Lead Collector</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="enter_your_password">Enter your Password</string>
+    <string name="login">login</string>
+    <string name="welcome_to_smart_lead_collector_application">Welcome to Smart Lead Collector application</string>
+    <string name="not_a_member_signup">Not a member? Signup</string>
+    <string name="this_is_the_dashboard_and_will_work_on_it_tomorrow">This is the DashBoard.and Will work on it tomorrow</string>
+    <string name="enter_you_phone_number">Enter you Phone number</string>
+    <string name="sign_up">Sign up</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="re_enter_your_password">Re-Enter your password</string>
+</resources>
