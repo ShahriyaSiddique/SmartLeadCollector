@@ -2,7 +2,6 @@ package com.foresight.smartleadcollector;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,17 +20,18 @@ import com.foresight.smartleadcollector.navigationdrawer.NavMenuAdapter;
 import com.foresight.smartleadcollector.navigationdrawer.NavMenuModel;
 import com.foresight.smartleadcollector.navigationdrawer.SubTitle;
 import com.foresight.smartleadcollector.navigationdrawer.TitleMenu;
+import com.foresight.smartleadcollector.storage.SharedPrefManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavMenuAdapter.MenuItemClickListener{
+public class MainActivity extends AppCompatActivity implements NavMenuAdapter.MenuItemClickListener {
 
     String current = "";
     Toolbar toolbar;
     DrawerLayout drawer;
     ArrayList<NavMenuModel> menu;
-    TextView tv ;
+    TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavMenuAdapter.Me
 
         setToolbar();
 
-        drawer = (DrawerLayout) findViewById(R.id.main_layout);
+        drawer = findViewById(R.id.main_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavMenuAdapter.Me
 
         setNavigationDrawerMenu();
 
-        tv = (TextView) findViewById(R.id.position);
+        tv = findViewById(R.id.position);
         tv.setText("Web and android dev.");
 
     }
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavMenuAdapter.Me
         menu = Constant.getMenuNavigasi();
         for (int i = 0; i < menu.size(); i++) {
             ArrayList<SubTitle> subMenu = new ArrayList<>();
-            if (menu.get(i).subMenu.size() > 0){
+            if (menu.get(i).subMenu.size() > 0) {
                 for (int j = 0; j < menu.get(i).subMenu.size(); j++) {
                     subMenu.add(new SubTitle(menu.get(i).subMenu.get(j).subMenuTitle));
                 }
@@ -91,19 +91,18 @@ public class MainActivity extends AppCompatActivity implements NavMenuAdapter.Me
         return list;
     }
 
-    @Override
+  /*  @Override
     protected void onStart() {
         super.onStart();
 
         Log.i("this is ", "onStart: " + current);
-        if (current==null) {
+        if (current == null) {
             mainToWelcome();
 
+        } else {
+            Toast.makeText(this, "Welcome to Dashboard", Toast.LENGTH_SHORT).show();
         }
-        else {
-            Toast.makeText(this, "This is the main activity", Toast.LENGTH_SHORT).show();
-        }
-    }
+    }*/
 
     private void mainToWelcome() {
         Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
@@ -126,14 +125,23 @@ public class MainActivity extends AppCompatActivity implements NavMenuAdapter.Me
     @Override
     public void onMenuItemClick(String itemString) {
         for (int i = 0; i < menu.size(); i++) {
-            if (itemString.equals(menu.get(i).menuTitle)){
+            if (itemString.equals("LogOut")) {
+                Toast.makeText(this, "Logout clicked", Toast.LENGTH_SHORT).show();
+                SharedPrefManager.getInstance(this).clear();
+                    Intent intent = new Intent(this, LoginActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+
+                break;
+            }
+            if (itemString.equals(menu.get(i).menuTitle)) {
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.main_content, menu.get(i).fragment)
                         .commit();
                 break;
-            }else{
+            } else {
                 for (int j = 0; j < menu.get(i).subMenu.size(); j++) {
-                    if (itemString.equals(menu.get(i).subMenu.get(j).subMenuTitle)){
+                    if (itemString.equals(menu.get(i).subMenu.get(j).subMenuTitle)) {
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.main_content, menu.get(i).subMenu.get(j).fragment)
                                 .commit();
@@ -143,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements NavMenuAdapter.Me
             }
         }
 
-        if (drawer != null){
+        if (drawer != null) {
             drawer.closeDrawer(GravityCompat.START);
         }
     }
@@ -155,6 +163,17 @@ public class MainActivity extends AppCompatActivity implements NavMenuAdapter.Me
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if (!SharedPrefManager.getInstance(this).isLoggedIn()) {
+            Intent intent = new Intent(this, WelcomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         }
     }
 

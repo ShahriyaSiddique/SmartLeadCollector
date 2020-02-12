@@ -7,76 +7,96 @@
     tools:context=".SignUpActivity">
 
     <ImageView
-        android:id="@+id/login_icon"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
+        android:id="@+id/sign_up_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/sign_up" />
 
-    <EditText
-        android:id="@+id/login_email_et"
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/sign_up_email_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login_icon"
-        android:layout_margin="15dp"
+        android:layout_below="@id/sign_up_icon"
+        android:layout_margin="5dp"
         android:background="@drawable/input_design"
         android:hint="@string/enter_your_email"
         android:inputType="textEmailAddress"
-        android:padding="15dp"
+        android:padding="8dp"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelAnimating="true"
+        app:met_floatingLabelText="Email"
+        app:met_floatingLabelTextSize="20sp"
         tools:autofillHints="abc@gmail.com" />
 
 
-    <EditText
-        android:id="@+id/login_phone_et"
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/sign_up_phone_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login_email_et"
-        android:layout_margin="15dp"
+        android:layout_below="@+id/sign_up_email_et"
+        android:layout_margin="5dp"
         android:background="@drawable/input_design"
         android:hint="@string/enter_you_phone_number"
         android:inputType="phone"
-        android:padding="15dp" />
+        android:padding="10dp"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelAnimating="true"
+        app:met_floatingLabelText="Phone"
+        app:met_floatingLabelTextSize="20sp" />
 
 
-    <EditText
-        android:id="@+id/login_name_et"
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/sign_up_name_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login_phone_et"
-        android:layout_margin="15dp"
+        android:layout_below="@+id/sign_up_phone_et"
+        android:layout_margin="5dp"
         android:background="@drawable/input_design"
         android:hint="@string/enter_your_name"
         android:inputType="text"
-        android:padding="15dp" />
+        android:padding="10dp"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelAnimating="true"
+        app:met_floatingLabelText="Name"
+        app:met_floatingLabelTextSize="20sp"/>
 
-    <EditText
-        android:id="@+id/login_password_et"
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/sign_up_password_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login_name_et"
-        android:layout_margin="15dp"
+        android:layout_below="@+id/sign_up_name_et"
+        android:layout_margin="5dp"
         android:background="@drawable/input_design"
         android:hint="@string/enter_your_password"
         android:inputType="textPassword"
-        android:padding="15dp" />
+        android:padding="10dp"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelAnimating="true"
+        app:met_floatingLabelText="Password"
+        app:met_floatingLabelTextSize="20sp" />
 
-    <EditText
-        android:id="@+id/login_password_repeat_et"
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/sign_up_password_repeat_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login_password_et"
-        android:layout_margin="15dp"
+        android:layout_below="@+id/sign_up_password_et"
+        android:layout_margin="5dp"
         android:background="@drawable/input_design"
         android:hint="@string/re_enter_your_password"
         android:inputType="textPassword"
-        android:padding="15dp" />
+        android:padding="10dp"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelAnimating="true"
+        app:met_floatingLabelText="Re-Password"
+        app:met_floatingLabelTextSize="20sp" />
 
     <Button
         android:id="@+id/sign_up_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login_password_repeat_et"
-        android:layout_margin="15dp"
+        android:layout_below="@id/sign_up_password_repeat_et"
+        android:layout_margin="5dp"
         android:background="@drawable/button_design"
         android:text="@string/sign_up"
         android:textAllCaps="false"

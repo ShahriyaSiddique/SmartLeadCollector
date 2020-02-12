@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    tools:context=".fragment.EventAddFragment">
+
+
+    <ImageView
+        android:id="@+id/login_icon"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/add" />
+
+    <EditText
+        android:id="@+id/login_email_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_icon"
+        android:layout_margin="15dp"
+        android:background="@drawable/input_design"
+        android:hint="@string/enter_event_name"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        tools:autofillHints="abc@gmail.com" />
+
+
+    <EditText
+        android:id="@+id/login_phone_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_email_et"
+        android:layout_margin="15dp"
+        android:background="@drawable/input_design"
+        android:hint="@string/enter_start_date"
+        android:inputType="phone"
+        android:padding="15dp" />
+
+
+    <EditText
+        android:id="@+id/login_name_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_phone_et"
+        android:layout_margin="15dp"
+        android:background="@drawable/input_design"
+        android:hint="@string/enter_end_date"
+        android:inputType="text"
+        android:padding="15dp" />
+
+    <EditText
+        android:id="@+id/login_password_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_name_et"
+        android:layout_margin="15dp"
+        android:background="@drawable/input_design"
+        android:hint="@string/enter_venue"
+        android:inputType="textPassword"
+        android:padding="15dp" />
+
+    <EditText
+        android:id="@+id/login_password_repeat_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_password_et"
+        android:layout_margin="15dp"
+        android:background="@drawable/input_design"
+        android:hint="@string/enter_city"
+        android:inputType="textPassword"
+        android:padding="15dp" />
+
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_password_repeat_et"
+        android:layout_margin="15dp"
+        android:background="@drawable/button_design"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

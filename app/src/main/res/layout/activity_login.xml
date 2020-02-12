@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,24 +10,28 @@
     <ImageView
         android:id="@+id/login_icon"
         android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_height="300dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/login" />
+        android:src="@drawable/login"
+        />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/login_email_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/login_icon"
         android:layout_margin="15dp"
-        android:background="@drawable/input_design"
         android:hint="@string/enter_your_email"
         android:inputType="textEmailAddress"
-        android:padding="15dp"
-        tools:autofillHints="abc@gmail.com" />
+        android:padding="10dp"
+        tools:autofillHints="abc@gmail.com"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelAnimating="true"
+        app:met_floatingLabelText="Email"
+        app:met_floatingLabelTextSize="20sp"/>
 
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/login_password_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,7 +40,11 @@
         android:background="@drawable/input_design"
         android:hint="@string/enter_your_password"
         android:inputType="textPassword"
-        android:padding="15dp" />
+        android:padding="10dp"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelAnimating="true"
+        app:met_floatingLabelText="Password"
+        app:met_floatingLabelTextSize="20sp"/>
 
     <Button
         android:id="@+id/login_btn"

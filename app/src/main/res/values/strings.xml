@@ -10,4 +10,31 @@
     <string name="sign_up">Sign up</string>
     <string name="enter_your_name">Enter your name</string>
     <string name="re_enter_your_password">Re-Enter your password</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="dashboard_fragment">Dashboard Fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="copyright"> </string>
+    <string name="manage_team_list">Manage Team List</string>
+    <string name="status_fragment">Status fragment</string>
+    <string name="member_list_full_list_fragment">Member List Full List fragment</string>
+    <string name="member_list_change_role_fragment">Member List Change Role fragment</string>
+    <string name="member_list_add_member_fragment">Member List Add Member fragment</string>
+    <string name="manage_team_make_team_fragment">Manage Team Make Team fragment</string>
+    <string name="manage_team_study_fragment">Manage Team Study fragment</string>
+    <string name="manage_team_list_fragment">Manage Team List fragment</string>
+    <string name="lead_fragment">Lead fragment</string>
+    <string name="event_edit_fragment">Event Edit fragment</string>
+    <string name="shahriya_siddique">Shahriya Siddique</string>
+    <string name="android_programmer">Android Programmer</string>
+    <string name="enter_event_name">Enter Event Name</string>
+    <string name="enter_start_date">Enter Start Date</string>
+    <string name="enter_end_date">Enter End Date</string>
+    <string name="enter_venue">Enter Venue</string>
+    <string name="enter_city">Enter City</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
 </resources>
